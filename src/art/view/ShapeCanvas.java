@@ -37,4 +37,60 @@ public class ShapeCanvas extends JPanel
 		this.setPreferredSize(new Dimension(600, 600));
 		this.setMaximumSize(getPreferredSize());
 	}
+	
+	public void addShape(Shape current)
+	{
+		if (current instanceof Polygon)
+		{
+			if(((Polygon)current).xpoints.length == 3)
+			{
+				triangleList.add((Polygon) current);
+			}
+			else
+			{
+				polygonList.add((Polygon)current);
+			}
+		}
+		else if(current instanceof Ellipse2D)
+		{
+			ellipseList.add((Ellipse2D)current);
+		}
+		else
+		{
+			rectangleList.add((Rectangle) current);
+		}
+		updateImage();
+	}
+	
+	public void clear()
+	{
+		
+	}
+	
+	public void changeBackground()
+	{
+		
+	}
+	
+	public void save()
+	{
+		
+	}
+	
+	private Color randomColor()
+	{
+		return null;
+	}
+	
+	private void updateImage()
+	{
+		
+	}
+	
+	@Override
+	protected void paintComponent(Graphics graphics)
+	{
+		super.paintComponent(graphics);
+		graphics.drawImage(canvasImage, 0, 0, null);
+	}
 }
